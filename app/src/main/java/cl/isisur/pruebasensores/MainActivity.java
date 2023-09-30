@@ -10,5 +10,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mgr=(SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        textLista =(TextView) findViewById(R.id.sensorsList);
+        List<Sensor> sensorList=mgr.getSensorList(Sensor.TYPE_ALL);
+        StringBuilder stringBuilder= new StringBuilder();
+        for (Sensor s: sensorList){
+            stringBuilder.append(s.getName()+"\n");
+        }
+
+        textLista.setVisibility(View.VISIBLE);
+        textLista.setText(stringBuilder);
+
+
     }
 }
