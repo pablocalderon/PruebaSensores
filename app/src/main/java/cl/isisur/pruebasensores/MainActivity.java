@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         List<Sensor> sensorList=mgr.getSensorList(Sensor.TYPE_ALL);
         StringBuilder stringBuilder= new StringBuilder();
         for (Sensor s: sensorList){
-            stringBuilder.append(s.getName()+"\n");
+            stringBuilder.append(s.getName()).append("\n");
         }
 
         textLista.setVisibility(View.VISIBLE);
